@@ -2,5 +2,5 @@
 dist
 working
 master
-credentials.csv
+public/credentials.csv
 public/NaoComittar.txt
