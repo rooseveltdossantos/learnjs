@@ -36,13 +36,13 @@ describe('LearnJS', function(){
 			var view = learnjs.problemView('1');
 			view.find('.answer').val('true');
 			view.find('.check-btn').click();
-			expect(view.find('.result').text()).toEqual('Correct!');
+			expect(view.find('.result').text().trim()).toEqual('Correto!Próximo desafio');
 		});
 		it('rejects an incorrect answer', function() {
 			var view = learnjs.problemView('1');
 			view.find('.answer').val('false');
 			view.find('.check-btn').click();
-			expect(view.find('.result').text()).toEqual('Incorrect!');
+			expect(view.find('.result').text()).toEqual('Incorreto!');
 		})
 	});			
 })
