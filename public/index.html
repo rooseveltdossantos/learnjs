@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
-<!-- http://rsj.bucket.s3-website-us-east-1.amazonaws.com -->
+<!-- http://rsj.bucket.s3-website-us-east-1.amazonaws.com
+google:
+  id do cliente:  32389829550-163ucv6ec0v5ho1ab9raodnc32kn7fdj.apps.googleusercontent.com 
+  chave secreta:  MMg1-FCydLN4ifZ6t6n_C3V9 
+
+ -->
+
+
 <head>
   <meta charset='utf-8'>
   <title>Learn JS!</title>
@@ -10,6 +17,8 @@
   <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
   <script src='/vendor.js'></script>
   <script src='/app.js'></script>
+  <script src='https://apis.google.com/js/platform.js' async defer></script>
+  <meta name='google-signin-client_id' content="32389829550-163ucv6ec0v5ho1ab9raodnc32kn7fdj.apps.googleusercontent.com"/>
   <style type="text/css" media="all">
     body { margin-top: 30px; }
     .templates {display: none;}
@@ -40,6 +49,10 @@
     .nav-container a {
       color: white;
     }
+    .navbar-padding {
+      padding-top: 7px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>    
@@ -49,6 +62,11 @@
         <li><a class='text-lg' href='#'>Aprender JS</a></li>
         <li><a href='#problem-1'>Iniciar</a></li>
       </ul>
+      <div class='four columns'>
+        <span class='navbar-padding u-pull-right'>
+          <span class='g-signin2' data-onsuccess='googleSignIn'></span>
+        </span>
+      </div>
     </div>    
     <div class='view-container container'>
     </div>

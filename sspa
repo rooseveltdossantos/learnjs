@@ -154,6 +154,7 @@ function create_identity_pool() {
   if [[ ! -s ${identity_pool_dir}/pool_info.json ]]; then
     echo "Creating identity pool: $identity_pool_name"
     aws --profile $profile cognito-identity create-identity-pool \
+      --region us-east-1 \
       --identity-pool-name $identity_pool_name \
       --cli-input-json "file://${identity_pool_dir}/config.json" \
       > ${identity_pool_dir}/pool_info.json
@@ -165,6 +166,7 @@ function create_identity_pool() {
   echo "Updating identity pool roles"
   aws --profile $profile cognito-identity set-identity-pool-roles \
     --identity-pool-id ${pool_id} \
+    --region us-east-1 \
     --roles authenticated=${role_arn}
 }
 
